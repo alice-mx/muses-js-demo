@@ -1,5 +1,11 @@
 <html>
 
+<head>
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+</head>
+
 <body>
   <h1>Lesson 3 - Spaceship</h1>
   <div class="dotted-div">
@@ -21,18 +27,6 @@
 </html>
 
 <style>
-  body {
-    padding: 25px;
-    font-family: Arial, Helvetica, sans-serif
-  }
-
-  .dotted-div {
-    background-color: lightgray;
-    border: 2px dotted black;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-
   #spaceship {
     width: 10px;
     height: 10px;
@@ -68,10 +62,14 @@
   function moveDown() {
     y = y + 15;
     spaceship.style.top = y;
+
+    if (y > 500) {
+      alert("You crashed :( Game over!");
+    }
   }
 
   let downbutton = document.querySelector("#down");
   downbutton.onclick = moveDown;
 
-  //TODO: Repeat these steps for the #up, #left and #right buttons
+  document.onkeydown = keypress;
 </script>

@@ -1,0 +1,90 @@
+<html>
+
+<body>
+  <h1>Lesson 5 - Jurassic Park</h1>
+  <div class="dotted-div">
+    <h2>Complete the Game</h2>
+    <p>There are some features to add to this game before it's finished.</p>
+    <ul>
+      <li>Make the scientist move around the park so she can escape the t-rex</li>
+      <li>Make something happen when the scientist and the t-rex bump in to one another</li>
+    </ul>
+  </div>
+
+  <div class="wrapper">
+    <div id="trex">🦖</div>
+    <div id="scientist">👩‍🔬</div>
+  </div>
+
+</body>
+
+</html>
+
+<style>
+  body {
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .dotted-div {
+    background-color: lightgray;
+    border: 2px dotted black;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  #trex {
+    font-size: 70px;
+    position: absolute;
+  }
+
+
+  #scientist {
+    font-size: 45px;
+    position: absolute;
+  }
+
+
+  .wrapper {
+    background-image: linear-gradient(0deg, #3b5236, #476839, #547f3c, #60963e);
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  // TODO: Make the scientist respond to up/down/left/right keystrokes. 
+
+  // TODO: Make something happen when the scientist bumps into the t-rex. (But what!)
+
+  let trex = document.querySelector("#trex");
+  let dinoX = 0;
+  let dinoY = 0;
+
+  xSpeed = 1;
+  ySpeed = 1;
+
+  function moveTrex() {
+    if (Math.random() > 0.99) {
+      xSpeed = xSpeed * -1;
+    }
+
+    if (Math.random() > 0.99) {
+      ySpeed = ySpeed * -1;
+    }
+
+    // TODO: Make the t-rex stay within the bounds of the park. 
+    // Maybe she should change direction if she is too close to the edge?
+
+    dinoX += xSpeed;
+    dinoY += ySpeed;
+    trex.style.top = dinoX;
+    trex.style.left = dinoY;
+  }
+
+  setInterval(moveTrex, 20);
+
+
+</script>
