@@ -1,0 +1,145 @@
+<html>
+
+<body>
+  <h1>Lesson 1 - HTML and CSS</h1>
+  <div class="info">
+    <p>This is a simple HTML page. You can view the page in a web browser, like Chrome or Edge. To edit the page, open
+      this file with a text editor like Notepad.</p>
+    <p>HTML pages are made up of elements, such as h1 (heading 1), "p" (paragraph) and "div" (division). You can add
+      styles to these elements using CSS, which change how the elements are displayed on the page. Elements can be given
+      ids and classes, which allow you to select them to apply styles.</p>
+  </div>
+
+  <div class="dotted-div">
+    <h2>Task 1: Applying styles with a class</h2>
+    <p>Update the ".dotted-div" style to have a blue background and a green border.</p>
+
+    <div class="info">
+      You can select a class in CSS by adding a dot before the class name, e.g. ".my-class-name".
+    </div>
+  </div>
+
+  <div id="task-2"
+    class="dotted-div">
+    <h2>Task 2: Applying specific styles with an ID</h2>
+    <p>
+      Update the "task-2" style a style that makes the background of this element green, but leaves the other elements
+      unchanged.
+    </p>
+    <div class="info">
+      You can apply styles to a specific element if it has an 'id' attribute. You can select this in CSS by adding a '#'
+      before the ID name, e.g.: '#my-element-name'.
+    </div>
+  </div>
+
+  <div id="task-3"
+    class="dotted-div">
+    <h2>Task 3: Nested CSS Selectors</h2>
+    <p>Update the colour of this paragraph to be red. Change all other paragraphs to be dark green.</p>
+    <div class="info">
+      You can apply styles to a specific elements WITHIN another element. To apply styles to a paragraph within an
+      element with an id of "my-id", you would use the following selector: "#my-id p".
+    </div>
+  </div>
+
+  <div id="task-4"
+    class="dotted-div">
+    <h2>Task 4: Applying 'hover' styles</h2>
+    <p>Update this div ("#task-4") so that it has a width of 100% when the mouse hovers over it.</p>
+    <div class="info">
+      You can apply styles to elements which only apply at certain times. For example, if you add ":hover" at the end of
+      a selector, those styles will only apply when you hover over an element.
+    </div>
+  </div>
+
+  <div class="dotted-div">
+    <h2>Task 5: Applying simple animation</h2>
+    <p>Update this div so it has an additional class, "animated-div". This will apply an existing animation to this
+      element</p>
+    <p>Edit the animation so it repeats every 10 seconds, rather than every 2 seconds.</p>
+
+    <div class="info">
+      You can apply multiple classes to one element. Seperate the list of class names with spaces, e.g.: "class-name-1
+      class-2"
+    </div>
+  </div>
+  <a href="./lesson-2.html">Next Lesson >
+  </a>
+</body>
+
+</html>
+
+<style>
+  body {
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .info {
+    background-color: lightgoldenrodyellow;
+    border: 2px solid burlywood;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  /***TASK 1***/
+
+  /*  This style applies to all elements with a class of 'dotted-div'.
+      To select a class in CSS, you use a dot followed by the class name, like this: */
+  .dotted-div {
+    background-color: lightgray;
+    border: 2px dotted black;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /***TASK 2***/
+  /*  This style applies to an element with an id of "task-2".
+      To select an id in CSS, you use a '#' followed by the id name.*/
+  #task-2 {
+    /*Add new styles here*/
+  }
+
+
+  /***TASK 3***/
+  /*  This selector changes all "p" (paragraph) tags on the page*/
+  p {
+    color: black;
+    font-weight: bold;
+  }
+
+  /*  This style applies to "p" elements within an element with an id of "task-3"*/
+  #task-3 p {
+    color: black;
+  }
+
+
+  /***TASK 4***/
+  #task-4 {
+    width: 50%;
+    transition: linear 0.3s all;
+  }
+
+  /*  This style applies when you hover over an element with an id of "task-4"*/
+  #task-4:hover {
+    width: 50%;
+  }
+
+  /***TASK 5***/
+  .animated-div {
+    animation-name: my-first-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes my-first-animation {
+    from {
+      transform: rotate(-10deg);
+    }
+
+    to {
+      transform: rotate(10deg);
+    }
+  }
+</style>

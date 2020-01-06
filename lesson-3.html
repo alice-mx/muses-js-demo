@@ -1,0 +1,77 @@
+<html>
+
+<body>
+  <h1>Lesson 3 - Spaceship</h1>
+  <div class="dotted-div">
+    <h2>Task 1: Piloting a spaceship</h2>
+    <p>Update the following to pilot the spaceship. (The 'down' button already works!) </p>
+    <button id="down">Down</button>
+    <button id="up">Up</button>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+
+  </div>
+
+  <div class="wrapper">
+    <div id="spaceship">🛸</div>
+    <div id="earth">🌍</div>
+  </div>
+</body>
+
+</html>
+
+<style>
+  body {
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .dotted-div {
+    background-color: lightgray;
+    border: 2px dotted black;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  #spaceship {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    transition: linear 0.3s all;
+    font-size: 45px;
+    left: 0;
+    top: 0;
+  }
+
+  #earth {
+    font-size: 80px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+  }
+
+  .wrapper {
+    background-image: linear-gradient(25deg, #e06c7f, #c285a4, #969bc9, #39aef0);
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  let x = 0;
+  let y = 0;
+
+  let spaceship = document.querySelector("#spaceship");
+
+  function moveDown() {
+    y = y + 15;
+    spaceship.style.top = y;
+  }
+
+  let downbutton = document.querySelector("#down");
+  downbutton.onclick = moveDown;
+
+  //TODO: Repeat these steps for the #up, #left and #right buttons
+</script>

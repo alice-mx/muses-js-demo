@@ -1,0 +1,166 @@
+<html>
+
+<body>
+  <h1>Lesson 2 - Javascript</h1>
+  <p>HTML elements can be dynamically altered using Javascript</p>
+
+  <div class="dotted-div">
+    <h2>Task 1: Hello World</h2>
+    <p>Update the pop-up message to read "hello world"</p>
+    <button id="button-1">Click me!</button>
+  </div>
+
+  <div class="dotted-div">
+    <h2>Task 2: Updating content on the page</h2>
+    <p>Update the function to print "Hello World" to the 'update-text' paragraph</p>
+    <p>Add a function to '#button-2-clear' that removes the message from 'update-text'</p>
+    <p id="update-text"></p>
+    <button id="button-2">Click me!</button>
+    <button id="button-2-clear">Delete Message</button>
+  </div>
+
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Updating styles using JavaScript</h2>
+    <p>Change the background colour of this section ("#task-3")</p>
+    <p>Update "new-style-class" to change what styles are applied after the button is clicked.</p>
+
+    <p id="update-text"></p>
+    <button id="button-3">Click me!</button>
+  </div>
+
+
+  <div class="dotted-div"
+    id="task-4">
+    <h2>Task 4: Creating and appending new elements</h2>
+    <p>Change the background colour of this section ("#task-3")</p>
+    <p>Update "new-style-class" to change what styles are applied after the button is clicked.</p>
+
+    <p id="update-text"></p>
+    <button id="button-4">Click me!</button>
+  </div>
+
+
+  <div class="dotted-div"
+    id="task-5">
+    <h2>Task 5: Add Multiple elements using a loop</h2>
+    <p>Update the loop in task 5 to repeat 10 times, instead of 0 times.</p>
+    <p id="update-text"></p>
+    <button id="button-5">Click me!</button>
+  </div>
+
+  <a href="./lesson-1.html">
+    < Previous
+      Lesson</a>
+      |
+      <a
+      href="./lesson-3.html">Next Lesson >
+  </a>
+</body>
+
+</html>
+
+<style>
+  body {
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .info {
+    background-color: lightgoldenrodyellow;
+    border: 2px solid burlywood;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .dotted-div {
+    background-color: lightgray;
+    border: 2px dotted black;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .new-style-class {
+    /*** TODO: TASK 3***/
+  }
+
+  .blocky-element {
+    background-color: green;
+    display: inline-flex;
+    /***TODO: Increase size of element***/
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+  }
+</style>
+
+<script>
+  /*** TASK 1 ***/
+  function helloWorld() {
+    /*TODO: Update message to say 'hello world'*/
+    alert("Update this message!")
+  }
+
+  let helloWorldButton = document.querySelector("#button-1");
+  helloWorldButton.onclick = helloWorld;
+
+
+
+  /*** TODO: TASK 2 ***/
+  let updateText = document.querySelector("#update-text")
+  let yourText = "update this text to have your message!"
+  function updateTextFunction() {
+    updateText.innerHTML = yourText;
+  }
+
+  let updateTextButton = document.querySelector("#button-2");
+  updateTextButton.onclick = updateTextFunction;
+
+  function clearText() {
+    //TODO: update 'updateText' to be an empty string of text;
+  }
+
+  let clearTextbutton = document.querySelector("#button-2-clear");
+  clearTextbutton.onclick = clearText;
+
+
+
+  /*** TASK 3 ***/
+  /*TODO 3.1: create a variable called 'styleDiv' by selecting '#task-3' from the document using document.querySelector*/
+
+  function updateStyle() {
+    styleDiv.style.color = "red";
+    styleDiv.classList.add("new-style-class");
+  }
+
+  let updateStyleButton = document.querySelector("#button-3");
+  /*TODO 3.2: update the 'onclick' event for 'updateStyleButton' to equal 'updateStyle';
+
+
+  /*** TASK 4 ***/
+  /*TODO 4.1: select the element wrapper using document.querySelector and call it 'createElementWrapper'*/
+
+  function createElement() {
+    let newElement = document.createElement("div");
+    newElement.classList.add('blocky-element');
+    createElementWrapper.appendChild(newElement);
+  }
+
+  /*TODO 4.2: select the create element button wrapper using document.querySelector, and then make 'onclick' equal the create element function'*/
+
+  /*** TASK 5 ***/
+  let loopElementWrapper = document.querySelector("#task-5");
+
+  function addMultipleElements() {
+    /*TODO: Update 0 to be 10 - this will make the loop repeat 10 times*/
+    for (let i = 0; i < 0; i++) {
+      let newElement = document.createElement("div");
+      newElement.classList.add('blocky-element');
+      loopElementWrapper.appendChild(newElement);
+    }
+  }
+
+  let loopButton = document.querySelector("#button-5");
+  loopButton.onclick = addMultipleElements;
+
+</script>
