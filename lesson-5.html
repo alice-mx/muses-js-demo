@@ -3,11 +3,19 @@
 <body>
   <h1>Lesson 5 - Jurassic Park</h1>
   <div class="dotted-div">
-    <h2>Complete the Game</h2>
+    <h2>Task: Complete the Game</h2>
     <p>There are some features to add to this game before it's finished.</p>
     <ul>
       <li>Make the scientist move around the park so she can escape the t-rex</li>
       <li>Make something happen when the scientist and the t-rex bump in to one another</li>
+      <li>Make sure the t-rex doesn't leave the park - maybe she should change direction if she's too close to the edge?
+      </li>
+    </ul>
+    <p>Feel free to add some bonus features to the game, such as:</p>
+    <ul>
+      <li>Give the scientist multiple lives</li>
+      <li>Maybe create a helicopter the scientist can escape to</li>
+      <li>Can you create multiple dinosaurs?</li>
     </ul>
   </div>
 
@@ -67,6 +75,8 @@
   ySpeed = 1;
 
   function moveTrex() {
+    // The T-REX will only change direction 1% of the time - you can make her
+    // change direction more often if you want. 
     if (Math.random() > 0.99) {
       xSpeed = xSpeed * -1;
     }
