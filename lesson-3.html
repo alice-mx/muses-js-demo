@@ -1,75 +1,110 @@
 <html>
 
 <head>
+  <!--We're importing some of the generic styles from the last lesson.-->
   <link rel="stylesheet"
     href="./style.css">
   </style>
 </head>
 
 <body>
-  <h1>Lesson 3 - Spaceship</h1>
+  <h1>Lesson 3 - Javascript</h1>
+  <p>HTML elements can be dynamically altered using Javascript</p>
   <div class="dotted-div">
-    <h2>Task 1: Piloting a spaceship</h2>
-    <p>Update the following to pilot the spaceship. (The 'down' button already works!) </p>
-    <button id="down">Down</button>
-    <button id="up">Up</button>
-    <button id="left">Left</button>
-    <button id="right">Right</button>
-
+    <h2>Task 1: Hello World</h2>
+    <p>Update the pop-up message to read "hello world"</p><button id="button-1">Click me !</button>
   </div>
-
-  <div class="wrapper">
-    <div id="spaceship">🛸</div>
-    <div id="earth">🌍</div>
+  <div class="dotted-div">
+    <h2>Task 2: Updating content on the page</h2>
+    <p>Update the function to print "Hello World" to the 'update-text' paragraph</p>
+    <p>Add a function to '#clear-text-button' that removes the message from 'update-text'</p>
+    <p id="update-text"></p>
+    <button id="add-text-button">Add some text</button>
+    <button id="clear-text-button">Clear the text</button>
   </div>
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Updating styles using JavaScript</h2>
+    <p>Change the background colour of this section ("#task-3")</p>
+    <p>Update "new-style-class"to change what styles are applied after the button is clicked.</p>
+    <p id="update-text"></p><button id="button-3">Click me !</button>
+  </div>
+  <div class="dotted-div"
+    id="task-4">
+    <h2>Task 4: Creating and appending new elements</h2>
+    <p>Change the background colour of this section ("#task-3")</p>
+    <p>Update "new-style-class"to change what styles are applied after the button is clicked.</p>
+    <p id="update-text"></p><button id="button-4">Click me !</button>
+  </div>
+  </div><a href="./lesson-2.html">
+    < Previous
+      Lesson</a>
+      |
+      <a
+      href="./lesson-4.html">Next Lesson>
+  </a>
 </body>
 
 </html>
 
 <style>
-  #spaceship {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    transition: linear 0.3s all;
-    font-size: 45px;
-    left: 0;
-    top: 0;
-  }
-
-  #earth {
-    font-size: 80px;
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-  }
-
-  .wrapper {
-    background-image: linear-gradient(25deg, #e06c7f, #c285a4, #969bc9, #39aef0);
-    position: relative;
-    width: 500px;
-    height: 500px;
-    overflow: hidden;
+  .new-style-class {
+    background-color: green;
   }
 </style>
 
 <script>
-  let x = 0;
-  let y = 0;
-
-  let spaceship = document.querySelector("#spaceship");
-
-  function moveDown() {
-    y = y + 15;
-    spaceship.style.top = y;
-
-    if (y > 500) {
-      alert("You crashed :( Game over!");
-    }
+  /*** TASK 1 ***/
+  function helloWorld() {
+    /*TODO: Update message to say 'hello world'*/
+    alert("Update this message!")
   }
 
-  let downbutton = document.querySelector("#down");
-  downbutton.onclick = moveDown;
+  let helloWorldButton = document.querySelector("#button-1");
+  helloWorldButton.onclick = helloWorld;
 
-  document.onkeydown = keypress;
+
+
+  /*** TODO: TASK 2 ***/
+  let updateText = document.querySelector("#update-text")
+  let yourText = "update this text to have your message!"
+  function updateTextFunction() {
+    updateText.innerHTML = yourText;
+  }
+
+  let updateTextButton = document.querySelector("#add-text-button");
+  updateTextButton.onclick = updateTextFunction;
+
+  function clearText() {
+    //TODO: update 'updateText' to be an empty string of text;
+  }
+
+  let clearTextbutton = document.querySelector("#clear-text-button");
+  clearTextbutton.onclick = clearText;
+
+
+
+  /*** TASK 3 ***/
+  // TODO: create a variable called 'styleDiv' by selecting the '#task-3' div
+
+  function updateStyle() {
+    styleDiv.style.color = "red";
+    styleDiv.classList.add("new-style-class");
+  }
+
+  let updateStyleButton = document.querySelector("#button-3");
+  /*TODO: update the 'onclick' event for 'updateStyleButton' to equal 'updateStyle'
+
+
+  /*** TASK 4 ***/
+  // TODO: select the element wrapper ("#task-4") and call it 'createElementWrapper'
+
+  function createElement() {
+    let newElement = document.createElement("div");
+    newElement.classList.add('blocky-element');
+    createElementWrapper.appendChild(newElement);
+  }
+
+  //TODO: select the create element button wrapper ("#button-4")
+  //TOOD: update the 'onlick' event of your element to equal 'createElement' 
 </script>
