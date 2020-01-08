@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+</head>
+
+<body>
+  <h1>Lesson 4B - Loops</h1>
+  <p>HTML elements can be dynamically altered using JavaScript</p>
+
+  <div class="dotted-div"
+    id="task-1">
+    <h2>Task 1: Loops</h2>
+    <p>Update the loop in the "runTheLoop" function to repeat 10 times, instead of once</p>
+    <button id="button-1">Click me !</button>
+  </div>
+
+  <div class="dotted-div"
+    id="task-a">
+    <h2>Task 2: Changing content within a loop</h2>
+    <p>Update the loop so that it prints how many times it's run, e.g.: "the loop has run 0 times, the loop has run 1
+      times, the loop has run 2 times"</p>
+    <div id="loop-output"></div>
+    <button id="button-2">Click me !</button>
+  </div>
+
+
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Looping through an array of elements</h2>
+    <div class="info">You can loop through an array of element and perform actions on each element in the array.</div>
+    <p>Update the 'dynamicLoop()' to try and apply some different styles to each elements (such as changing the width of
+      each element. Currently, the loop will rotate each of the divs to different amounts.</p>
+    <p id="update-text"></p><button id="button-3">Click me !</button>
+  </div>
+
+  <a href="./lesson-4.html">
+    < Previous
+      Lesson</a>|
+      <a
+      href="./lesson-5.html">Next Lesson>
+  </a>
+</body>
+
+</html>
+
+<script>
+  /*** TASK 1 ***/
+  let loopElementWrapper = document.querySelector("#task-1");
+  function runTheLoop() {
+    /*TODO: Update 0 to be 10 - this will make the loop repeat 10 times*/
+    for (let i = 0; i < 1; i++) {
+      loopElementWrapper.append("💚");
+    }
+  }
+
+  let loopButton = document.querySelector("#button-1");
+  loopButton.onclick = runTheLoop;
+
+  /*** TASK 2 ***/
+  let countingLoopWrapper = document.querySelector("#loop-output");
+  function runCountingLoop() {
+    for (let index = 0; index < 5; index++) {
+      let p = document.createElement("p");
+      //TODO: Update the text to say how many times the loop has run, based on the index variable.  
+      p.innerHTML = "This loop has run " + 0 + " times.";
+      countingLoopWrapper.appendChild(p);
+    }
+  }
+
+  let countingButton = document.querySelector("#button-2");
+  countingButton.onclick = runCountingLoop;
+
+  // /*** TASK 3 ***/
+
+  function dynamicLoop() {
+    let tasks = document.querySelectorAll(".dotted-div");
+    for (let index = 0; index < tasks.length; index++) {
+      //TODO: Update the styles applied by the loop, e.g.: modify the width of the 
+      //element. 
+
+      tasks[index].style.transform = `rotate(${index}deg)`;
+
+      //Some example styles you could try:
+      //tasks[index].style.backgroundColor = `hsl(${index*30}, 50%, 80%)`;
+      //tasks[index].style.width = index * 50;
+    }
+  }
+
+  let dynamicLoopButton = document.querySelector("#button-3");
+  dynamicLoopButton.onclick = dynamicLoop;
+</script>

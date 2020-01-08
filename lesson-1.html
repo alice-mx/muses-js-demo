@@ -3,41 +3,42 @@
 <body>
   <h1>Lesson 1 - HTML and CSS</h1>
   <div class="info">
-    <p>You can add
-      styles to HTML elements (like 'div' or 'h3') using CSS, which change how the elements are displayed on the page.
-      Elements can be given
-      ids and classes, which allow you to select them to apply styles.</p>
+    You can add styles to HTML elements (like 'div' or 'h3') using CSS, which change how the elements are displayed on
+    the page. Elements can be given ids and classes, which allow you to select them to apply styles.
   </div>
 
   <div class="dotted-div">
     <h2>Task 1: Applying styles with a class</h2>
-    <p>Update the ".dotted-div" style to have a blue background and a green border.</p>
+    Update the ".dotted-div" style to have a blue background and a green border.
 
     <div class="info">
-      You can select a class in CSS by adding a dot before the class name, e.g. ".my-class-name".
+      You can select a class in CSS by adding a dot before the class name, e.g. ".my-class-name" within the
+      &lt;style&gt;&lt;/style&gt; tags on the page. You can then add
     </div>
   </div>
 
   <div id="task-2"
     class="dotted-div">
     <h2>Task 2: Applying specific styles with an ID</h2>
-    <p>
-      Update the "task-2" style a style that makes the background of this element green, but leaves the other elements
-      unchanged.
-    </p>
+    Update the "task-2" style a style that makes the background of this element green, but leaves the other elements
+    unchanged.
     <div class="info">
       You can apply styles to a specific element if it has an 'id' attribute. You can select this in CSS by adding a '#'
       before the ID name, e.g.: '#my-element-name'.
+      <strong>
+        You should use a class when you're applying a style to many different elments. An element's id should be
+        unique.
+      </strong>
     </div>
   </div>
 
   <div id="task-3"
     class="dotted-div">
     <h2>Task 3: Nested CSS Selectors</h2>
-    <p>Update the colour of this paragraph to be red. Change all other paragraphs to be dark green.</p>
+    Update the colour of the info section below to be red. Change all info sections to be pink.
     <div class="info">
-      You can apply styles to a specific elements WITHIN another element. To apply styles to a paragraph within an
-      element with an id of "my-id", you would use the following selector: "#my-id p".
+      You can apply styles to a specific elements and classes WITHIN another element. To apply styles to an 'info' class
+      within an element with an id of "my-id", you would use the following selector: "#my-id .info".
     </div>
   </div>
   <a href="./lesson-0.html">Previous Lesson</a> |
@@ -57,6 +58,7 @@
     border: 2px solid burlywood;
     padding: 10px;
     border-radius: 4px;
+    margin-top: 5px;
   }
 
   /***TASK 1***/
@@ -75,19 +77,18 @@
   /*  This style applies to an element with an id of "task-2".
       To select an id in CSS, you use a '#' followed by the id name.*/
   #task-2 {
-    /*Add new styles here*/
+    /*TODO: Add new styles here*/
   }
 
 
   /***TASK 3***/
-  /*  This selector changes all "p" (paragraph) tags on the page*/
-  p {
+  /*  This selector changes all ".info" sections on the page*/
+  .info {
     color: black;
-    font-weight: bold;
   }
 
-  /*  This style applies to "p" elements within an element with an id of "task-3"*/
-  #task-3 p {
+  /*  This style applies to ".info" elements within an element with an id of "task-3"*/
+  #task-3 .info {
     color: black;
   }
 </style>

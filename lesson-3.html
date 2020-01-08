@@ -8,14 +8,26 @@
 </head>
 
 <body>
-  <h1>Lesson 3 - Javascript</h1>
-  <p>HTML elements can be dynamically altered using Javascript</p>
+  <h1>Lesson 3 - JavaScript</h1>
+  <div class="info">
+    <p>HTML elements can be dynamically altered using JavaScript.</p>
+    <p>
+      When programming in JavaScript, it is useful to view output in the 'console' tab of the developer window (Fn+F12
+      to
+      view)
+    </p>
+  </div>
   <div class="dotted-div">
-    <h2>Task 1: Hello World</h2>
-    <p>Update the pop-up message to read "hello world"</p><button id="button-1">Click me !</button>
+    <h2>Task 1: Functions</h2>
+    <div class="info">A function is a small bit of code that repeats the same action when called.</div>
+    <p>Update the <code>helloWorld()</code> function so that the pop up message says "hello world", rather than "Update
+      this message!"</p><button id="button-1">Run Hello World Function</button>
   </div>
   <div class="dotted-div">
     <h2>Task 2: Updating content on the page</h2>
+    <div class="info">You can use code like this
+      <code>document.querySelector("#my-element").innerHTML = 'example'</code> to
+      update content on a webpage.</div>
     <p>Update the function to print "Hello World" to the 'update-text' paragraph</p>
     <p>Add a function to '#clear-text-button' that removes the message from 'update-text'</p>
     <p id="update-text"></p>
@@ -24,34 +36,39 @@
   </div>
   <div class="dotted-div"
     id="task-3">
-    <h2>Task 3: Updating styles using JavaScript</h2>
-    <p>Change the background colour of this section ("#task-3")</p>
-    <p>Update "new-style-class"to change what styles are applied after the button is clicked.</p>
+    <h2>Task 3: Finding Elements on the page using JavaScript</h2>
+    <div class="info">You can find an element on the page using JavaScript, using the
+      <code>document.querySelector()</code>. This
+      selects elements using the same names you can select them by using CSS.
+      function </div>
+    <p>Update <code>document.querySelector("#I-CANT-FIND-MY-ELEMENT")</code> to instead look for an element with the id
+      of
+      <code>#task-3</code>. This will make the button update the style of this section.
+    </p>
     <p id="update-text"></p><button id="button-3">Click me !</button>
-  </div>
+  </div c>
   <div class="dotted-div"
     id="task-4">
-    <h2>Task 4: Creating and appending new elements</h2>
-    <p>Change the background colour of this section ("#task-3")</p>
-    <p>Update "new-style-class"to change what styles are applied after the button is clicked.</p>
+    <h2>Task 4: Connecting functions to buttons</h2>
+    <div class="info">Functions won't run unless they are called, or triggered by an event like pressing a button. You
+      can use JavaScript to connect buttons to functions.</div>
+    <p>Update the button in task 4 (<code>document.querySelector("#WHERE-IS-THE-BUTTON")</code>) so that it's connected
+      to
+      #button-4
+      below.</p>
     <p id="update-text"></p><button id="button-4">Click me !</button>
   </div>
-  </div><a href="./lesson-2.html">
-    < Previous
-      Lesson</a>
-      |
-      <a
-      href="./lesson-4.html">Next Lesson>
-  </a>
+  <//div> <a
+    href="./lesson-2.html">
+  < Previous
+    Lesson</a>
+    |
+    <a
+    href="./lesson-4.html">Next Lesson>
+    </a>
 </body>
 
 </html>
-
-<style>
-  .new-style-class {
-    background-color: green;
-  }
-</style>
 
 <script>
   /*** TASK 1 ***/
@@ -59,52 +76,40 @@
     /*TODO: Update message to say 'hello world'*/
     alert("Update this message!")
   }
-
-  let helloWorldButton = document.querySelector("#button-1");
-  helloWorldButton.onclick = helloWorld;
+  document.querySelector("#button-1").onclick = helloWorld;
 
 
 
   /*** TODO: TASK 2 ***/
-  let updateText = document.querySelector("#update-text")
-  let yourText = "update this text to have your message!"
   function updateTextFunction() {
-    updateText.innerHTML = yourText;
+    document.querySelector("#update-text").innerHTML = "update this text to have your message!";
   }
-
-  let updateTextButton = document.querySelector("#add-text-button");
-  updateTextButton.onclick = updateTextFunction;
 
   function clearText() {
     //TODO: update 'updateText' to be an empty string of text;
   }
 
-  let clearTextbutton = document.querySelector("#clear-text-button");
-  clearTextbutton.onclick = clearText;
+  document.querySelector("#add-text-button").onclick = updateTextFunction;
+  document.querySelector("#clear-text-button").onclick = clearText;
+
 
 
 
   /*** TASK 3 ***/
-  // TODO: create a variable called 'styleDiv' by selecting the '#task-3' div
-
   function updateStyle() {
-    styleDiv.style.color = "red";
-    styleDiv.classList.add("new-style-class");
+    // TODO: update the 'query selector' value to find #task-3 so its style can be updated
+    document.querySelector("#I-CANT-FIND-MY-ELEMENT").style.color = "red";
   }
 
-  let updateStyleButton = document.querySelector("#button-3");
-  /*TODO: update the 'onclick' event for 'updateStyleButton' to equal 'updateStyle'
+  document.querySelector("#button-3").onclick = updateStyle;
+
 
 
   /*** TASK 4 ***/
-  // TODO: select the element wrapper ("#task-4") and call it 'createElementWrapper'
-
-  function createElement() {
-    let newElement = document.createElement("div");
-    newElement.classList.add('blocky-element');
-    createElementWrapper.appendChild(newElement);
+  function coolFunction() {
+    document.querySelector("#task-4").style.backgroundColor = "hsl(0, 25%, 80%)";
   }
 
-  //TODO: select the create element button wrapper ("#button-4")
-  //TOOD: update the 'onlick' event of your element to equal 'createElement' 
+  //TODO: Update the query selector to find #button-4, so the function will work properly. 
+  document.querySelector("#WHERE-IS-THE-BUTTON").onclick = coolFunction;
 </script>
