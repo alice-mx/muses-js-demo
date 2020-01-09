@@ -8,8 +8,9 @@
 </head>
 
 <body>
-  <h1>Lesson 4B - Loops</h1>
-  <p>HTML elements can be dynamically altered using JavaScript</p>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 8 - Loops</h1>
+  <div class="info">A loop allows you to repeat an action a certain amount of times.</div>
 
   <div class="dotted-div"
     id="task-1">
@@ -31,18 +32,33 @@
   <div class="dotted-div"
     id="task-3">
     <h2>Task 3: Looping through an array of elements</h2>
-    <div class="info">You can loop through an array of element and perform actions on each element in the array.</div>
-    <p>Update the 'dynamicLoop()' to try and apply some different styles to each elements (such as changing the width of
-      each element. Currently, the loop will rotate each of the divs to different amounts.</p>
-    <p id="update-text"></p><button id="button-3">Click me !</button>
+    <div class="info">You can loop through an array of elements. </div>
+    For this task, update the <code>dynamicLoop() </code> function so that each item in the to do list is printed.
+    Currently, it will just print the first item out over and over again.
+    <ul id="todo-list">
+
+    </ul>
+    <button id="button-3">Print to do list!</button>
   </div>
 
-  <a href="./lesson-4.html">
-    < Previous
-      Lesson</a>|
-      <a
-      href="./lesson-5.html">Next Lesson>
-  </a>
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I understand what a loop is.
+      </li>
+      <li>
+        I can use a loop to print different numbers.
+      </li>
+      <li>
+        I can use a loop to access items in an array using the index of the loop.
+      </li>
+    </ul>
+  </div>
+
+
+  <a href="./lesson-7.html">Previous Lesson</a> |
+  <a href="./lesson-9.html">Next Lesson</a>
 </body>
 
 </html>
@@ -65,8 +81,9 @@
   function runCountingLoop() {
     for (let index = 0; index < 5; index++) {
       let p = document.createElement("p");
-      //TODO: Update the text to say how many times the loop has run, based on the index variable.  
-      p.innerHTML = "This loop has run " + 0 + " times.";
+      //TODO: Update '0' to be 'index'. This will make the loop print out how many times
+      //it has run. 
+      p.innerHTML = `This loop has run ${0} times.`;
       countingLoopWrapper.appendChild(p);
     }
   }
@@ -77,16 +94,15 @@
   // /*** TASK 3 ***/
 
   function dynamicLoop() {
-    let tasks = document.querySelectorAll(".dotted-div");
+    let tasks = ['Buy milk', 'Do laundry', 'Clean room'];
+    let todoList = document.querySelector("#todo-list");
+    console.log(todoList);
     for (let index = 0; index < tasks.length; index++) {
-      //TODO: Update the styles applied by the loop, e.g.: modify the width of the 
-      //element. 
+      let item = document.createElement('li');
 
-      tasks[index].style.transform = `rotate(${index}deg)`;
-
-      //Some example styles you could try:
-      //tasks[index].style.backgroundColor = `hsl(${index*30}, 50%, 80%)`;
-      //tasks[index].style.width = index * 50;
+      //TODO: Update the task[0] so it prints out each element in the array 
+      item.innerHTML = tasks[0]
+      todoList.appendChild(item);
     }
   }
 

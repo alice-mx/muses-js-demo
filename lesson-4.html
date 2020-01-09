@@ -1,5 +1,3 @@
-<html>
-
 <head>
   <!--We're importing some of the generic styles from the last lesson.-->
   <link rel="stylesheet"
@@ -8,117 +6,59 @@
 </head>
 
 <body>
-  <h1>Lesson 4 - Variables, loops and if statements</h1>
-  <p>HTML elements can be dynamically altered using JavaScript</p>
-  <div class="dotted-div"
-    id="task-1">
-    <h2>Task 2: Updating a variable</h2>
-    <div class="info">A variable is a value that can change. </div>
-    <p> The 'counter' variable is changed by the 'plus' button </p>
-    <p>Update the <code>minus()</code> function so that it subtracts from the counter variable, and moves the car
-      backwards on the
-      racetrack.</p>
-    <button id="plus">PLUS +</button><button id="minus">MINUS -</button>
-    <div id="racetrack">
-      <span id="car">🚗</span>
-    </div>
-  </div>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 4 - JavaScript</h1>
+  <div class="info">
+    <h3>What is JavaScript?</h3>
+    JavaScript is a language that can be used to dynamically change HTML elements. This makes webpages more
+    interactive and useful.
 
-  <div class="dotted-div"
-    id="task-2">
-    <h2>Task 2: Storing different types of values</h2>
-    <div class="info">Variables can store numbers, words and true/false values,
-      as well as more complicated kinds of data.</div>
-    <p>You can store different kinds of values in a variable. The 'color' variable in task 2 stores a color the user has
-      inputted. Can you update the <code>changeColor()</code> function so that the newly selected color becomes the
-      background color?
+    <h4>Page Structure</h4>
+    In these modules, we've put the JavaScript after the HTML content in &lt;script&gt;&lt;/script&gt; tags.
+    Sometimes JavaScript will be in another file that's imported when the page loads.
+
+    <h4>The Command Line</h4>
+    When programming in JavaScript, it is useful to view output in the 'console' tab of the developer window (Fn+F12
+    to view)
+
+    <h4> Comments</h4>
+    A comment is a part of the code that doesn't do anything. They start with // or /* characters.
+    They don't change what the code does, but can be useful for putting human readable notes in the code.
+
+  </div>
+  <div class="dotted-div">
+    <h2>Task 1: Hello World</h2>
+    <p>
+      Update the JavaScript at the bottom of the page so that the alert reads "Hello World" rather than "This alert is
+      written in JavaScript!"
     </p>
-    <input type="color"
-      id="color-picker"></input>
-    <button id="button-2">Change Colour</button>
+    <p>Refresh the page to see your changes.</p>
   </div>
 
-
-  <div class="dotted-div"
-    id="task-3">
-    <h2>Task 3: Arrays</h2>
-    <div class="info">
-      An array stores a list of values. You can access items in the list by their index like this, "myList[0]" for the
-      first item, "myList[1]" for the second item and so on.
-    </div>
-    <p>For this task, update the 'shoppingList' value to include 'apples' and 'pears'. Update the
-      <code>document.querySelector("#first-item").innerHTML</code> so that it sucessfully prints the first item in the
-      list (currently it prints the second item).</code></p>
-    <p>Shopping List Total: <strong id="shopping-total"></strong></p>
-    <span id="shopping-list"></span>
-    <h5>The first item is: <span id="first-item"></span></h5>
-    <button id="button-3">Print my shopping list</button>
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>I know where to find the JavaScript code within the module pages</li>
+      <li>I can edit an pop up message</li>
+      <li>I know what comments look like in JavaScript</li>
+      <li>I can find the console log in the developer tab.</li>
+    </ul>
   </div>
-
 
   <a href="./lesson-3.html">
-    < Previous
-      Lesson</a>|
-      <a
-      href="./lesson-4b.html">Next Lesson>
+    Previous Lesson
+  </a>
+  |
+  <a href="./lesson-5.html">
+    Next Lesson
   </a>
 </body>
 
-</html>
-<style>
-  #racetrack {
-    position: relative;
-    width: 100%;
-    height: 36px;
-    background-color: hsl(0, 0%, 50%);
-  }
-
-  #car {
-    position: absolute;
-    font-size: 36px;
-    left: 0;
-    bottom: 0;
-    transition: all 0.3s ease-in-out;
-  }
-</style>
-
 <script>
-  /*** TASK 1 ***/
-  let counter = 0;
-  let car = document.querySelector("#car");
-  function plus() {
-    counter = counter + 1;
-    car.style.left = counter * 50;
-  }
+  /*This is a comment! It doesn't do anything, it's just useful to take notes sometimes :)*/
+  //This is also a comment!
 
-  function minus() {
-    //TODO : make the minus function subtract 1 and then update the counter element. 
-  }
-
-  document.querySelector("#plus").onclick = plus;
-  document.querySelector("#minus").onclick = minus;
-
-  /*** TASK 2 ***/
-  function changeColor() {
-    let color = document.querySelector("#color-picker").value;
-    //TODO: Update this to set the color to our new color variable. 
-    document.querySelector("#task-2").style.backgroundColor = 'white';
-  }
-
-  document.querySelector("#button-2").onclick = changeColor;
-
-
-  /*** TASK 3 ***/
-  //TODO: Add some more items to your shopping list. 
-  let shoppingList = ["milk", "eggs"];
-  function printShoppingList() {
-    document.querySelector("#shopping-total").innerHTML = shoppingList.length;
-
-    //TODO: Update this text to display the first item in the list.
-    document.querySelector("#first-item").innerHTML = shoppingList[1];
-    document.querySelector("#shopping-list").innerHTML = shoppingList;
-  }
-
-  document.querySelector("#button-3").onclick = printShoppingList;
-
+  //TODO: Update this alert to say "hello world!"
+  console.log("Hello in the console :)")
+  alert("This alert is written in JavaScript!");
 </script>

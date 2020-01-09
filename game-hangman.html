@@ -3,81 +3,52 @@
 <head>
   <link rel="stylesheet"
     href="./style.css">
-  </style>
+  </link>
 </head>
 
 <body>
-  <h1>Lesson 3 - Hangman</h1>
+  <a href="./index.html">Home</a>
+  <h1>Hangman</h1>
   <div class="tasks">
     <div class="dotted-div">
-      <h2>Task 1: Update counter</h2>
-      <p>Currently, if you guess the wrong number, you just get a pop up which says "BOO!"</p>
-      <p>We should keep count of how many incorrect guesses have been made.</p>
+      <h2>Task 1: Lose lives for wrong guesses</h2>
+      <p>Currently, if you guess the wrong letter, you just get a pop up which says "BOO!"</p>
+      <p>We should subtract a life each time a wrong guess is made, and show less hearts on the game page.</p>
     </div>
 
     <div class="dotted-div">
-      <h2>Task 2: Styling our hangman</h2>
+      <h2>Task 2: Show Correct Letters</h2>
       <p>
-        The hangman image (<a href="./hangman.png">hangman.png</a>) shows seven different stages of the game.
-      </p>
-      <p>
-        We can use css styling to move the hangman so the image shows the correct stage. This can be done by changing
-        'hangman.style.backgroundPositionX' in the JavaScript. Use the 'incorrectGuesses' variable to change the
-        hangman's position.
-      </p>
+        Currently, the letters are all displayed to the user - so, it's not much of a game. Can you hide letters to the
+        user, unless they've guessed them correctly?</p>
     </div>
-
 
     <div class="dotted-div">
-      <h2>Task 3: Show Correct Letters</h2>
-      <p>
-        As the letters in the word are correctly guessed, can we display them to the user?
-      </p>
-      <p>
-        To do this, you will have to alter the contents of the #word div.
-      </p>
+      <h2>Task 3: Make all the alphabet buttons work</h2>
+      <p>Only the first six letter buttons of the alphabet work. Is there a way to easily connect all the buttons to the
+        checkLetter function?</p>
     </div>
-
 
     <div class="dotted-div">
       <h2>Task 4: Disable Guessed Letters</h2>
-      <p>After you've clicked on a letter, the button should become disabled.</p>
+      <p>After you've clicked on a letter, the button should become disabled, so the user can't guess it again.</p>
     </div>
 
     <div class="dotted-div">
-      <h2>Task 3: Guessing the word</h2>
-      <p>Choose a word and display the letters when the gamer guess the word correctly</p>
-      <p>Change the letter background to grey when the user guess wrong and to green when the user guess it right</p>
-      <p>Try using the function includes
-        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-
-        Hint on the left menu bar you will find some of the others method you can use in a string
+      <h2>Task 5: The end of the game</h2>
+      <p>Can you create some kind of notification for when the game has finsihed (either the user has guess the correct
+        word or run out of lives)?
       </p>
+      <p>This can be a popup, a message on the game board, or some other event.</p>
     </div>
 
     <div class="dotted-div">
-      <h2>Task 4: Changing the image when guess it wrong</h2>
+      <h2>Task 6: Styling</h2>
+      <p>The game's syling is pretty boring. Can you update the CSS so it looks a bit nicer?</p>
     </div>
-
-    <div class="dotted-div">
-      <h2>Task 5: Have an array of words and pick a ramdon one</h2>
-    </div>
-
-    <div class="dotted-div">
-      <h2>Task 6: Add a restart button</h2>
-      <p>it will give a new word and reset the letters</p>
-    </div>
-
-    <div class="dotted-div">
-      <h2>Task 7: Get words from api</h2>
-      <p>use https://random-word-api.herokuapp.com/ to fetch words</p>
-    </div>
-
-
   </div>
   <div class="wrapper">
-    <div id="hangman"
-      class="start"></div>
+    <h3 id="lives"></h3>
 
     <div id="word">
     </div>
@@ -133,25 +104,28 @@
     margin: 5px;
   }
 
-  #hangman {
-    width: 80px;
-    height: 200px;
+  #lives {
+    padding: 50px;
+    text-align: center;
+  }
+
+  #word {
     margin: auto;
-    background-image: url(hangman.png)
+    padding: 50px;
+    text-align: center;
+    background-color: beige;
   }
 
   #word span {
     margin: 10px;
-  }
-
-  #word span::before {
-    content: "__";
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .wrapper {
     background-color: hsl(0, 0%, 90%);
     width: 40%;
-    height: 500px;
     overflow: hidden;
     float: right;
   }
@@ -165,10 +139,18 @@
 <script>
   const word = ['C', 'A', 'B'];
 
-  const hangman = document.querySelector("#hangman");
-  hangman.style.backgroundPositionX = "-125px";
 
-  let incorrectGuesses = 0;
+  let livesRemaining = 7;
+
+  document.querySelector("#lives").innerHTML = "❤❤❤❤❤❤❤"
+
+  let wordDiv = document.querySelector("#word");
+  for (let i = 0; i < word.length; i++) {
+    let letter = document.createElement("span");
+    letter.innerHTML = word[i];
+    wordDiv.appendChild(letter);
+  }
+
 
   function checkLetter(event) {
     let letter = event.target.innerHTML; //What letter is inside the button that was pressed?
@@ -186,7 +168,7 @@
       alert("YAY!");
     } else {
       alert("BOO!");
-      //TODO: update the incorrect guesses variable for each wrong letter. 
+      //TODO: take away a life for each incorrect guess
 
       //TODO: change 'backgroundPositionX' based on how many incorrect guesses
       //have been made. 

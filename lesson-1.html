@@ -1,121 +1,43 @@
 <html>
 
 <body>
-  <h1>Lesson 1 - HTML and CSS</h1>
-  <div class="info">
-    You can add styles to HTML elements (like 'div' or 'h3') using CSS, which change how the elements are displayed on
-    the page. Elements can be given ids and classes, which allow you to select them to apply styles.
-  </div>
-
-  <div class="dotted-div">
-    <h2>Task 1: Applying styles with a class</h2>
-    Update the ".dotted-div" style to have a blue background and a green border.
-
-    <div class="info">
-      You can select a class in CSS by adding a dot before the class name, e.g. ".my-class-name" within the
-      &lt;style&gt;&lt;/style&gt; tags on the page. You can then add
-    </div>
-  </div>
-
-  <div id="task-2"
-    class="dotted-div">
-    <h2>Task 2: Applying specific styles with an ID</h2>
-    Update the "task-2" style a style that makes the background of this element green, but leaves the other elements
-    unchanged.
-    <div class="info">
-      You can apply styles to a specific element if it has an 'id' attribute. You can select this in CSS by adding a '#'
-      before the ID name, e.g.: '#my-element-name'.
-      <strong>
-        You should use a class when you're applying a style to many different elments. An element's id should be
-        unique.
-      </strong>
-    </div>
-  </div>
-
-  <div id="task-3"
-    class="dotted-div">
-    <h2>Task 3: Nested CSS Selectors</h2>
-    Update the colour of the info section below to be red. Change all info sections to be pink.
-    <div class="info">
-      You can apply styles to a specific elements and classes WITHIN another element. To apply styles to an 'info' class
-      within an element with an id of "my-id", you would use the following selector: "#my-id .info".
-    </div>
-  </div>
-
-  <div id="task-3"
-    class="dotted-div">
-    <h2>Task 4: Additional CSS styles</h2>
-    Try applying some other CSS styles to your elements, such as:
+  <a href="./index.html">Home</a>
+  <h1>Lesson 1 - HTML</h1>
+  <h2>This is a page</h2>
+  <p>This is a simple HTML page. HTML is a 'markup language' that you can use to create the building blocks of a
+    webpage. You can view the page in a web browser, like Chrome or Edge. To edit the page, open
+    this file with a text editor like Notepad. It might be easier to use a text editor which is specifically for coding,
+    like <a href="https://www.sublimetext.com/">Sublime</a>, as this will highlight parts of the code and make it easier
+    to read.</p>
+  <p>HTML pages are made up of elements, such as h1 (heading 1), "p" (paragraph) and "div" (division).</p>
+  <h3>Element can be within other elements
     <ul>
-      <li>background-image: linear-gradient(25deg, #2e2edf, #6570d4, #78adc7, #75eab6)</li>
-      <li>transform: rotate(45deg)</li>
-      <li>font-size: 55px</li>
+      <li>Like this list.</li>
+      <li>Of items.</li>
     </ul>
-    <div class="info">
-      There are several hundred potential style properties you can apply to elements. A full list for reference can be
-      found <a href="https://www.w3schools.com/cssref/default.asp">here</a>.
-    </div>
-  </div>
+  </h3>
+  <label>You can make labels: </label><input type="text"
+    value="And Input Fields"></input>
 
-  <div class="dotted-div">
-    <h2>Key Takeaways</h2>
-    <ul>
-      <li>When identifying elements, I know when to use a class and when to use an id.</li>
-      <li>I can apply styles to elements based on their classes and ids.</li>
-      <li>I can edit some CSS styles like background-color and width.</li>
-      <li>I know what comments look like in CSS.</li>
-      <li>I know where I can find more information about CSS properties.</li>
-    </ul>
-  </div>
-  </div>
-  <a href="./lesson-0.html">Previous Lesson</a> |
-  <a href="./lesson-2.html">Next Lesson </a>
+  <button>And Buttons</button>
+  <strong>You need additional languages like CSS and JavaScript to add style and interactivity to web pages.</strong>
+  <hr />
+  <h2>Task #1</h2>
+  <ul>
+    <li>Add a new heading (h2) that says: HELLO WORLD!</li>
+    <li>Save your changes in Notepad (or whatever text editor you're using) and refresh the page in your browser.</li>
+    <li>You should see your new heading! Congrats!</li>
+  </ul>
+  <hr />
+  <h2>Key Takeaways </h2>
+  <ul>
+    <li>I have a text editor I'm comfortable using</li>
+    <li>I'm able to edit the html files in my text editor and view the changes in the browser.</li>
+    <li>I can create simple elements like a paragraph and heading.</li>
+  </ul>
+  <h4>If you're not comfortable with any of key takeaway points, please ask your mentor for help.</h4>
+  <a href="./lesson-2.html">Next Lesson</a>
+  <br />
 </body>
 
 </html>
-
-<style>
-  body {
-    padding: 25px;
-    font-family: Arial, Helvetica, sans-serif
-  }
-
-  .info {
-    background-color: lightgoldenrodyellow;
-    border: 2px solid burlywood;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-
-  /***TASK 1***/
-
-  /*  This style applies to all elements with a class of 'dotted-div'.
-      To select a class in CSS, you use a dot followed by the class name, like this: */
-  .dotted-div {
-    background-color: lightgray;
-    border: 2px dotted black;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  /***TASK 2***/
-  /*  This style applies to an element with an id of "task-2".
-      To select an id in CSS, you use a '#' followed by the id name.*/
-  #task-2 {
-    /*TODO: Add new styles here*/
-  }
-
-
-  /***TASK 3***/
-  /*  This selector changes all ".info" sections on the page*/
-  .info {
-    color: black;
-  }
-
-  /*  This style applies to ".info" elements within an element with an id of "task-3"*/
-  #task-3 .info {
-    color: black;
-  }
-</style>
