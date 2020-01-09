@@ -10,106 +10,56 @@
 <body>
   <h1>Lesson 3 - JavaScript</h1>
   <div class="info">
-    <p>HTML elements can be dynamically altered using JavaScript.</p>
-    <p>
-      When programming in JavaScript, it is useful to view output in the 'console' tab of the developer window (Fn+F12
-      to
-      view)
-    </p>
+    <h3>What is JavaScript?</h3>
+    <p>JavaScript is a language that can be used to dynamically change HTML elements. This makes webpages more
+      interactive and useful.</p>
+    <h4>Page Structure</h4>
+    <p>In these modules, we've put the JavaScript after the HTML content in &lt;script&gt;&lt;/script&gt; tags.
+
+      <h4>The Command Line</h4>
+      <p>
+        When programming in JavaScript, it is useful to view output in the 'console' tab of the developer window (Fn+F12
+        to
+        view)
+      </p>
+      <h4> Comments</h4>
+      A comment is a part of the code that doesn't do anything. They start with // or /* characters.
+      They don't change what the code does, but can be useful for putting human readable notes in the code.
   </div>
   <div class="dotted-div">
-    <h2>Task 1: Functions</h2>
-    <div class="info">A function is a small bit of code that repeats the same action when called.</div>
-    <p>Update the <code>helloWorld()</code> function so that the pop up message says "hello world", rather than "Update
-      this message!"</p><button id="button-1">Run Hello World Function</button>
+    <h2>Task 1: Hello World</h2>
+    <p>Update the JavaScript at the bottom of the page so that the alert reads "Hello World" rather than "This alert is
+      written in JavaScript!"</p>
+    <p>Refresh the page to see your changes.</p>
   </div>
+
   <div class="dotted-div">
-    <h2>Task 2: Updating content on the page</h2>
-    <div class="info">You can use code like this
-      <code>document.querySelector("#my-element").innerHTML = 'example'</code> to
-      update content on a webpage.</div>
-    <p>Update the function to print "Hello World" to the 'update-text' paragraph</p>
-    <p>Add a function to '#clear-text-button' that removes the message from 'update-text'</p>
-    <p id="update-text"></p>
-    <button id="add-text-button">Add some text</button>
-    <button id="clear-text-button">Clear the text</button>
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>I know where to find the JavaScript part of these modules</li>
+      <li>I can edit an pop up message</li>
+      <li>I know what comments look like in JavaScript</li>
+      <li>I can find the console log in the developer tab.</li>
+    </ul>
   </div>
-  <div class="dotted-div"
-    id="task-3">
-    <h2>Task 3: Finding Elements on the page using JavaScript</h2>
-    <div class="info">You can find an element on the page using JavaScript, using the
-      <code>document.querySelector()</code>. This
-      selects elements using the same names you can select them by using CSS.
-      function </div>
-    <p>Update <code>document.querySelector("#I-CANT-FIND-MY-ELEMENT")</code> to instead look for an element with the id
-      of
-      <code>#task-3</code>. This will make the button update the style of this section.
-    </p>
-    <p id="update-text"></p><button id="button-3">Click me !</button>
-  </div c>
-  <div class="dotted-div"
-    id="task-4">
-    <h2>Task 4: Connecting functions to buttons</h2>
-    <div class="info">Functions won't run unless they are called, or triggered by an event like pressing a button. You
-      can use JavaScript to connect buttons to functions.</div>
-    <p>Update the button in task 4 (<code>document.querySelector("#WHERE-IS-THE-BUTTON")</code>) so that it's connected
-      to
-      #button-4
-      below.</p>
-    <p id="update-text"></p><button id="button-4">Click me !</button>
-  </div>
+
   <//div> <a
     href="./lesson-2.html">
   < Previous
     Lesson</a>
     |
     <a
-    href="./lesson-4.html">Next Lesson>
+    href="./lesson-3a.html">Next Lesson>
     </a>
 </body>
 
-</html>
-
 <script>
-  /*** TASK 1 ***/
-  function helloWorld() {
-    /*TODO: Update message to say 'hello world'*/
-    alert("Update this message!")
-  }
-  document.querySelector("#button-1").onclick = helloWorld;
+  /*This is a comment! It doesn't do anything, it's just useful to take notes sometimes :)*/
+  //This is also a comment!
 
-
-
-  /*** TODO: TASK 2 ***/
-  function updateTextFunction() {
-    document.querySelector("#update-text").innerHTML = "update this text to have your message!";
-  }
-
-  function clearText() {
-    //TODO: update 'updateText' to be an empty string of text;
-  }
-
-  document.querySelector("#add-text-button").onclick = updateTextFunction;
-  document.querySelector("#clear-text-button").onclick = clearText;
-
-
-
-
-  /*** TASK 3 ***/
-  function updateStyle() {
-    // TODO: update the 'query selector' value to find #task-3 so its style can be updated
-    document.querySelector("#I-CANT-FIND-MY-ELEMENT").style.color = "red";
-  }
-
-  document.querySelector("#button-3").onclick = updateStyle;
-
-
-
-  /*** TASK 4 ***/
-  function coolFunction() {
-    document.querySelector("#task-4").style.backgroundColor = "hsl(0, 25%, 80%)";
-  }
-
-  //TODO: Update the query selector to find #button-4, so the function will work properly. 
-  document.querySelector("#WHERE-IS-THE-BUTTON").onclick = coolFunction;
+  //TODO: Update this alert to say "hello world!"
+  console.log("Hello in the console :)")
+  alert("This alert is written in JavaScript!");
 </script>
+
+</html>

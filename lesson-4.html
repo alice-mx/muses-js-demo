@@ -49,9 +49,9 @@
     <p>For this task, update the 'shoppingList' value to include 'apples' and 'pears'. Update the
       <code>document.querySelector("#first-item").innerHTML</code> so that it sucessfully prints the first item in the
       list (currently it prints the second item).</code></p>
-    <strong id="shopping-total"></strong>
+    <p>Shopping List Total: <strong id="shopping-total"></strong></p>
     <span id="shopping-list"></span>
-    <h5 id="first-item"></h5>
+    <h5>The first item is: <span id="first-item"></span></h5>
     <button id="button-3">Print my shopping list</button>
   </div>
 
@@ -112,10 +112,10 @@
   //TODO: Add some more items to your shopping list. 
   let shoppingList = ["milk", "eggs"];
   function printShoppingList() {
-    document.querySelector("#shopping-total").innerHTML = `${shoppingList.length} items in basket: `;
+    document.querySelector("#shopping-total").innerHTML = shoppingList.length;
 
     //TODO: Update this text to display the first item in the list.
-    document.querySelector("#first-item").innerHTML = `The first item is ${shoppingList[1]}`;
+    document.querySelector("#first-item").innerHTML = shoppingList[1];
     document.querySelector("#shopping-list").innerHTML = shoppingList;
   }
 
